@@ -63,7 +63,7 @@ public class BootInitActivity extends Activity {
     private void setNotification() {
         LogUtils.i(TAG, "onCreate1");
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getApplicationContext());
-        boolean isOpen = prefs.getBoolean("switch_scan_service", false);
+        boolean isOpen = prefs.getBoolean("switch_scan_service", true);
         LogUtils.i(TAG, "onCreate2");
         NotificationManager notificationManager = (NotificationManager) this.getSystemService(NOTIFICATION_SERVICE);
         LogUtils.i(TAG, "onCreate3");

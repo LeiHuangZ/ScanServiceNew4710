@@ -177,7 +177,7 @@ public class ConfigFragment extends PreferenceFragment implements Preference.OnP
 
     private void setNotification() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this.getActivity());
-        boolean isOpen = prefs.getBoolean("switch_scan_service", false);
+        boolean isOpen = prefs.getBoolean("switch_scan_service", true);
         mNotificationManager = (NotificationManager) this.getActivity().getSystemService(NOTIFICATION_SERVICE);
         String id ="channel_1";
         String description = "123";

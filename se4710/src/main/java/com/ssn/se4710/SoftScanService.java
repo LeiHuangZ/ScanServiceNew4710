@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.BitmapFactory;
+import android.graphics.SurfaceTexture;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
@@ -43,7 +44,7 @@ import static android.support.v4.app.NotificationCompat.FLAG_NO_CLEAR;
  * 扫描服务主要实现类，后台触发扫描，提供对外控制扫描接口（常驻后台）
  */
 public class SoftScanService extends Service implements BarCodeReader.DecodeCallback, BarCodeReader.PictureCallback, BarCodeReader.PreviewCallback,
-        SurfaceHolder.Callback, BarCodeReader.VideoCallback, BarCodeReader.ErrorCallback {
+        SurfaceHolder.Callback, BarCodeReader.VideoCallback, BarCodeReader.ErrorCallback, SurfaceTexture.OnFrameAvailableListener {
 
     private static final String TAG = "SoftScanService";
     /** 连接扫描头 */
@@ -94,6 +95,8 @@ public class SoftScanService extends Service implements BarCodeReader.DecodeCall
      * 扫描头控制器
      */
     private BarCodeReader bcr = null;
+
+    private SurfaceTexture 	surfaceTexture	= null;
 
     /**
      * 初始化线程池管理类
@@ -178,7 +181,7 @@ public class SoftScanService extends Service implements BarCodeReader.DecodeCall
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-            boolean isOpen = prefs.getBoolean("switch_scan_service", false);
+            boolean isOpen = prefs.getBoolean("switch_scan_service", true);
             if (isOpen) {
                 //连接扫描头
                 if (Intent.ACTION_SCREEN_ON.equals(action)) {
@@ -199,7 +202,7 @@ public class SoftScanService extends Service implements BarCodeReader.DecodeCall
 
     private void setNotification() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isOpen = prefs.getBoolean("switch_scan_service", false);
+        boolean isOpen = prefs.getBoolean("switch_scan_service", true);
         String id ="channel_1";
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, id)
                 .setSmallIcon(R.drawable.ic_stat_name)
@@ -350,6 +353,12 @@ public class SoftScanService extends Service implements BarCodeReader.DecodeCall
 
     }
 
+    @Override
+    public void onFrameAvailable(SurfaceTexture surfaceTexture) {
+        // TODO Auto-generated method stub
+        Log.d("012", "onFrameAvailable");
+    }
+
     /**
      * 开启扫描头，连接扫描头
      */
@@ -366,11 +375,16 @@ public class SoftScanService extends Service implements BarCodeReader.DecodeCall
             // Set parameter - Uncomment for QC/MTK platforms
             // For QC/MTK platforms
             bcr.setParameter(765, 0);
-
-            bcr.setParameter(8610, 1);
+            bcr.setParameter(764, 5);
+//            bcr.setParameter(8610, 1);
             // Set Orientation
             // 4 - omnidirectional
             bcr.setParameter(687, 4);
+            if(android.os.Build.VERSION.SDK_INT >= 28){
+                surfaceTexture	= new SurfaceTexture(5);
+                surfaceTexture.setOnFrameAvailableListener(this);
+                bcr.setPreviewTexture(surfaceTexture);
+            }
             // add callback
             bcr.setDecodeCallback(this);
             bcr.setErrorCallback(this);

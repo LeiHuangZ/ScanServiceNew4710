@@ -4,7 +4,7 @@
     <PreferenceCategory android:title="@string/service_switch">
 
         <SwitchPreference
-            android:defaultValue="false"
+            android:defaultValue="true"
             android:key="switch_scan_service"
             android:title="@string/service_switch" />
     </PreferenceCategory>
