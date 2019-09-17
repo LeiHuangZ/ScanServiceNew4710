@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <com.dawn.newlandscan.widget.TopToolbar
+        android:id="@+id/tb_topToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.dawn.newlandscan.widget.TopToolbar>
+
+    <TextView
+        android:id="@+id/tv_scan_result"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tb_topToolBar"
+        android:layout_above="@+id/tv_scan_type"
+        android:scrollbars="vertical"
+        android:textSize="16dp"
+        android:text="result:"
+        android:layout_margin="8dp"/>
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_scan"
+        android:text="Type"/>
+    <TextView
+        android:id="@+id/tv_scan_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:textSize="16dp"
+        android:layout_marginLeft="8dp"
+        android:text="type"
+        android:layout_toRightOf="@+id/tv_type"
+        android:layout_above="@+id/btn_scan"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_scan"
+        android:layout_marginLeft="16dp"
+        android:text="Time:"
+        android:layout_toRightOf="@+id/tv_scan_type"/>
+    <TextView
+
+        android:id="@+id/tv_scan_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_scan"
+        android:layout_toRightOf="@+id/tv_time"
+        android:layout_marginLeft="16dp"
+        android:text="time"/>
+
+    <TextView
+        android:id="@+id/tv_len"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_scan"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/tv_scan_time"
+        android:text="strlen:"/>
+    <TextView
+        android:id="@+id/tv_san_len"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_scan"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/tv_len"
+        android:text="strlen"/>
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/btn_selector"
+        android:text="Scan"
+        android:textAllCaps="false"
+        android:textSize="32dp"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

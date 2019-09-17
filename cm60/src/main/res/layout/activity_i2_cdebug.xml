@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DebugI2CActivity"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <com.dawn.newlandscan.widget.TopToolbar
+        android:id="@+id/tb_topToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.dawn.newlandscan.widget.TopToolbar>
+
+    <TextView
+        android:id="@+id/tv_addr"
+        android:layout_below="@+id/tb_topToolBar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:text="Addr : "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/et_addr"
+        android:layout_below="@+id/tb_topToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/tv_addr"
+        android:hint="000"
+        android:inputType="number"
+        android:maxLength="3"
+        android:textSize="20sp"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/tv_length"
+        android:layout_below="@+id/tv_addr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="length:"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"/>
+    <Spinner
+        android:id="@+id/sp_length"
+        android:layout_below="@id/tv_addr"
+        android:layout_toRightOf="@id/tv_length"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="40dp"
+        android:entries="@array/data">
+    </Spinner>
+
+    <RadioGroup
+        android:id="@+id/rg_read_write"
+        android:layout_below="@+id/sp_length"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp">
+        <RadioButton
+            android:id="@+id/rbtn_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="true"
+            android:text="读" />
+        <RadioButton
+            android:id="@+id/rbtn_write"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:checked="false"
+            android:text="写" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/layout_data"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rg_read_write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data:"
+            android:textSize="20dp"
+            android:layout_marginRight="30dp"/>
+        <EditText
+            android:id="@+id/et_data0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:hint="000"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_data1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="001"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_data2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="002"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/et_data3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:hint="003"
+            android:inputType="number"
+            android:maxLength="3"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_i2c_show"
+        android:layout_below="@+id/layout_data"
+        android:layout_above="@+id/btn_send_cmd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/btn_send_cmd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/btn_selector"
+        android:text="send Cmd"
+        android:textAllCaps="false"
+        android:textSize="32dp"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>

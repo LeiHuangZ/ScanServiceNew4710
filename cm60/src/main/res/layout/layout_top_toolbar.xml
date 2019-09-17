@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimaryDark"
+        android:fitsSystemWindows="true"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <ImageButton
+            android:id="@+id/btn_htb_left"
+            android:layout_width="@dimen/toolbar_left_width"
+            android:layout_height="@dimen/toolbar_height"
+            android:scaleType="centerCrop"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:src="@drawable/ic_toolbar_back"
+            android:layout_gravity="left"/>
+
+        <TextView
+            android:id="@+id/tv_htb_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:text="标题"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/toolbar_title_text_size"
+            android:visibility="visible"/>
+
+        <ImageButton
+            android:id="@+id/btn_htb_right"
+            android:layout_width="@dimen/toolbar_right_width"
+            android:layout_height="@dimen/toolbar_right_height"
+            android:scaleType="centerCrop"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:src="@drawable/ic_toolbar_add"
+            android:layout_gravity="right"
+            />
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"></ListView>
+    </android.support.v7.widget.Toolbar>
+
+</LinearLayout>

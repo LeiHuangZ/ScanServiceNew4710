@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SensorSettingActivity">
+
+    <TextView
+        android:id="@+id/modeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:text="CaptureMode:"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/modeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/modeTextView"
+        android:hint="  CaptureMode"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/AdjustImgsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/modeTextView"
+        android:layout_marginStart="5dp"
+        android:text="AdjustImgs:    "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/AdjustImgsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/modeTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/AdjustImgsTextView"
+        android:hint="  AdjustImgs"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/SkipImgsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/AdjustImgsEditText"
+        android:layout_marginStart="5dp"
+        android:text="SkipImgs:          "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/SkipImgsEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/AdjustImgsEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/SkipImgsTextView"
+        android:hint="SkipImgs"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/RotationModeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/SkipImgsTextView"
+        android:layout_marginStart="5dp"
+        android:text="RotationMode:  "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/RotationModeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/SkipImgsEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/RotationModeTextView"
+        android:hint="RotationMode"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/MinExpValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/RotationModeEditText"
+        android:layout_marginStart="5dp"
+        android:text="MinExpValue:  "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/MinExpValueEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/RotationModeTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/MinExpValueTextView"
+        android:hint="  MinExpValue"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/MaxExpValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MinExpValueTextView"
+        android:layout_marginStart="5dp"
+        android:text="MaxExpValue: "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/MaxExpValueEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MinExpValueEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/MaxExpValueTextView"
+        android:hint="  MaxExpValue"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/MinGainValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MaxExpValueEditText"
+        android:layout_marginStart="5dp"
+        android:text="MinGainValue: "
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/MinGainValueEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MaxExpValueEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/MinGainValueTextView"
+        android:hint="  MinGainValue"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/MaxGainValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MinGainValueEditText"
+        android:layout_marginStart="5dp"
+        android:text="MaxGainValue:"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/MaxGainValueEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MinGainValueEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/MaxGainValueTextView"
+        android:hint="  MinGainValue"
+        android:background="@null" />
+
+    <TextView
+        android:id="@+id/TargetLumaValueTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MaxGainValueEditText"
+        android:layout_marginStart="5dp"
+        android:text="TargetLumaVa:"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/TargetLumaValueEditText"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_below="@+id/MaxGainValueEditText"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="30dp"
+        android:layout_toRightOf="@+id/MaxGainValueTextView"
+        android:hint="  TargetLumaValue"
+        android:background="@null" />
+
+    <Button
+        android:id="@+id/cancelParam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/saveParam"
+        android:text="取消当前输入"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/saveParam"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="15dp"
+        android:text="保存参数"/>
+
+
+</RelativeLayout>
